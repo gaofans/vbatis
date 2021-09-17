@@ -2,15 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile name="Annotation profile for parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="vbatis" />
+        <option name="codegen.output" value="D:\git-projects\vbatis\vbatis-gen/src/main" />
+        <processor name="io.vertx.codegen.CodeGenProcessor" />
+        <module name="vbatis-gen" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dependencies" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="vbatis" options="" />
+    </option>
   </component>
 </project>
