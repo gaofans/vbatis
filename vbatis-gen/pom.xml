@@ -36,6 +36,28 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <configuration>
+                            <annotationProcessors>
+                                <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
+                            </annotationProcessors>
+                            <!-- It is new option since v3.5 to instruct compiler detect annotation processors classpath -->
+                            <annotationProcessorPaths>
+                                <path>
+                                    <groupId>io.vertx</groupId>
+                                    <artifactId>vertx-codegen</artifactId>
+                                    <version>${vertx.version}</version>
+                                </path>
+                                <!-- ... more path such as vertx-service-proxy/vertx-rx-java2 depends on what you want to generate ... -->
+                            </annotationProcessorPaths>
+                            <compilerArgs>
+                                <arg>-Acodegen.output=${project.basedir}/src/main</arg>
+                            </compilerArgs>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <!-- 添加测试目录加载.java文件 -->
             <plugin>

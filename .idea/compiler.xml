@@ -10,6 +10,12 @@
         <processor name="io.vertx.codegen.CodeGenProcessor" />
         <module name="vbatis-gen" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vbatis-core" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dependencies" target="1.5" />
